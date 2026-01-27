@@ -1,8 +1,3 @@
-<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title></title>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yonatanmm/ISG@afbb200961d9994888c01f1d3a020f76ea51c1e3/Style_1.css">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yonatanmm/ISG@afbb200961d9994888c01f1d3a020f76ea51c1e3/Style_2.css">
 <style type="text/css">* {
     box-sizing: border-box;
     margin: 0;
@@ -49,7 +44,7 @@
 
   .menu-item:hover,
   .menu-item.active {
-    background: #6d050e;
+    background: #602e32;
     color: #fff;
   }
 
@@ -248,31 +243,3 @@ font-size: clamp(1.2rem, 4vw, 2.2rem); /* responsive scaling */
     white-space: nowrap;
   }
 </style>
-
-<div class="app"><!-- Sidebar -->
-<aside class="sidebar">
-<div class="logo">DANIP ISG-2</div>
-
-<nav class="menu"><!-- DATA ENTRY FIRST --><a class="menu-item active" data-tab="data-entry">Data Entry</a> <a class="menu-item" data-tab="dashboard">Dashboard</a> <a class="menu-item" data-tab="reports">Reports</a><a class="menu-item" data-tab="DANIP">Your Report</a> <a class="menu-item" data-tab="settings">ai.help</a></nav>
-</aside>
-<!-- Main -->
-
-<main class="main">
-<header class="header">
-<div></div>
-
-<div class="logo-container"><img alt="Logo" class="logo" src="https://github.com/yonatanmm/img/blob/4ee18e6cafc063a260e5d4616cfbcd928c3c36fc/Logo.PNG?raw=true" style="width: 380px; height: 171px;" /></div>
-
-<div></div>
-</header>
-<!-- Content -->
-
-<section class="content"><!-- DATA ENTRY -->
-<div class="tab-content active" id="data-entry">
-<div class="card">
-<h2 class="scroll-text"><strong>ISG 2 : USI Data Entry</strong></h2>
-<!-- SUB-TABS -->
-<div class="ni-form-wrapper">
-<nav>
-<div class="ni-tabs"><button class="ni-tab-link active" onclick="openNiTab(event, 'tab-coverage')" type="button">Coverage</button><button class="ni-tab-link" onclick="openNiTab(event, 'tab-annual')" type="button">Annual Data</button><button class="ni-tab-link" onclick="openNiTab(event, 'tab-training')" type="button">Training</button><button class="ni-tab-link" onclick="openNiTab(event, 'tab-meeting')" type="button">Meeting</button><button class="ni-tab-link" onclick="openNiTab(event, 'tab-achievements')" type="button">Achievements</button></div>
-</nav>
