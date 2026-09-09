@@ -1,152 +1,313 @@
-/* --- NI PALETTE & SCOPING --- */
-.ni-form-wrapper {
-    /* Core Palette */
-    --ni-charcoal: #2C3E50;  /* Deep dark blue-grey */
-    --ni-carmine: #B03A2E;   /* Deep red */
-    --ni-white: #FFFFFF;
-    
-    /* Primary Palette (Aesthetics) */
-    --ni-blue: #2980B9;
-    --ni-purple: #8E44AD;
-    --ni-green: #27AE60;
-    --ni-bg-light: #F8F9F9; /* Sober background */
-    --ni-border: #D5DBDB;
+/* =========================================================
+   NI DATA ENTRY PAGE
+   Main Tab Menu Styling
+   ========================================================= */
 
-    font-family: 'Roboto', 'Segoe UI', sans-serif;
-    color: #333;
-    background-color: var(--ni-white);
-    max-width: 100%;
-    margin: 0 auto;
-    border: 1px solid var(--ni-border);
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+* {
+    box-sizing: border-box;
 }
 
-/* --- TABS NAVIGATION --- */
-.ni-tabs {
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f8;
+    color: #2c3e50;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+header {
+    width: 100%;
+    min-height: 70px;
+    background: #2c3e50;
+    color: #ffffff;
+
     display: flex;
-    background-color: var(--ni-charcoal);
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 30px;
+}
+
+/* Page title */
+header h1,
+header h2,
+header h3 {
+    margin: 0;
+    color: #ffffff;
+}
+
+/* Welcome message */
+header .welcome,
+header p {
+    color: #ffffff;
+}
+
+/* =========================================================
+   MAIN CONTENT
+   ========================================================= */
+
+main {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* =========================================================
+   TAB MENU
+   ========================================================= */
+
+/*
+   This targets buttons/links used as the main menu.
+   Give your menu container the class .ni-tabs
+*/
+
+.ni-tabs {
+    width: 100%;
+    background: #17374b;
+
+    display: flex;
+    align-items: stretch;
+
+    border-bottom: 4px solid #b03a2e;
+
     padding: 0;
     margin: 0;
-    list-style: none;
-    border-bottom: 4px solid var(--ni-carmine);
 }
 
+/* Individual tab */
+
+.ni-tabs button,
+.ni-tabs a,
 .ni-tab-link {
-    flex: 1;
-    padding: 15px 10px;
-    color: rgba(255,255,255,0.7);
-    text-align: center;
-    cursor: pointer;
-    font-weight: 500;
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    transition: all 0.3s ease;
+    appearance: none;
     border: none;
-    background: none;
+
+    background: transparent;
+    color: #ffffff;
+
+    padding: 16px 28px;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    text-decoration: none;
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
 }
 
+/* Hover */
+
+.ni-tabs button:hover,
+.ni-tabs a:hover,
 .ni-tab-link:hover {
-    color: var(--ni-white);
-    background-color: rgba(255,255,255,0.1);
+    background: #6a5acd;
+    color: #ffffff;
 }
 
+/* Active tab */
+
+.ni-tabs button.active,
+.ni-tabs a.active,
 .ni-tab-link.active {
-    color: var(--ni-white);
-    background-color: var(--ni-carmine);
-    font-weight: 700;
-    box-shadow: inset 0 -3px 0 rgba(0,0,0,0.2);
+    background: #ffffff;
+    color: #17374b;
+
+    border-top: 4px solid #6a5acd;
+    margin-top: -4px;
 }
 
-/* --- TAB CONTENT AREA --- */
+/* =========================================================
+   TAB CONTENT
+   ========================================================= */
+
 .ni-tab-content {
-    display: none; /* Hidden by default */
+    display: none;
+
+    background: #ffffff;
+
     padding: 25px;
-    background-color: var(--ni-bg-light);
-    animation: fadeIn 0.4s ease-in-out;
+
+    min-height: 400px;
+
+    border: 1px solid #d7dbe1;
+    border-top: none;
 }
 
 .ni-tab-content.active {
-    display: block; /* Shown when active */
+    display: block;
 }
 
-/* --- HEADINGS --- */
-.ni-section-header {
-    border-left: 5px solid var(--ni-carmine);
-    padding-left: 15px;
-    margin-bottom: 20px;
-    color: var(--ni-charcoal);
+/* =========================================================
+   SUB MENU
+   ========================================================= */
+
+.ni-submenu {
+    display: flex;
+    align-items: center;
+
+    background: #d7dbe1;
+
+    border-bottom: 1px solid #c4c8cc;
+
+    padding: 0;
 }
 
-.ni-section-header h3 {
-    margin: 0;
-    font-size: 1.25rem;
-    font-weight: 600;
-}
+.ni-submenu button,
+.ni-submenu a {
+    border: none;
 
-.ni-section-header p {
-    margin: 5px 0 0;
-    font-size: 0.9rem;
-    color: #666;
-}
+    background: transparent;
 
-/* --- DATA ENTRY TABLE --- */
-.ni-data-table {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0;
-    background: var(--ni-white);
-    border: 1px solid var(--ni-border);
-    border-radius: 4px;
-    overflow: hidden;
-}
+    color: #2c3e50;
 
-.ni-data-table th {
-    background-color: #EAECEE;
-    color: var(--ni-charcoal);
-    font-weight: 600;
-    text-align: left;
-    padding: 12px 15px;
-    border-bottom: 2px solid var(--ni-border);
-    font-size: 0.9rem;
-}
+    padding: 12px 22px;
 
-.ni-data-table td {
-    padding: 10px 15px;
-    border-bottom: 1px solid var(--ni-border);
-    vertical-align: middle;
-}
-
-.ni-data-table tr:last-child td {
-    border-bottom: none;
-}
-
-.ni-data-table tr:hover td {
-    background-color: #FAFAFA;
-}
-
-/* --- INPUT FIELDS (DHIS2 MOCK) --- */
-/* These styles target standard inputs to look "Classy" */
-.ni-input, select.ni-input {
-    width: 100%;
-    padding: 8px 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
     font-size: 14px;
-    transition: border 0.3s, box-shadow 0.3s;
-    background-color: #fff;
-    box-sizing: border-box; /* Fixes width issues */
+    font-weight: 600;
+
+    cursor: pointer;
+
+    text-decoration: none;
 }
 
-/* Focus State using Primary Palette Blue */
-.ni-input:focus {
+.ni-submenu button:hover,
+.ni-submenu a:hover {
+    background: #6a5acd;
+    color: #ffffff;
+}
+
+.ni-submenu .active {
+    background: #ffffff;
+    color: #17374b;
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+button {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.ni-button {
+    border: none;
+
+    background: #17374b;
+    color: #ffffff;
+
+    padding: 10px 20px;
+
+    border-radius: 4px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+}
+
+.ni-button:hover {
+    background: #6a5acd;
+}
+
+/* =========================================================
+   DATA TABLE
+   ========================================================= */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+}
+
+th {
+    background: #2c3e50;
+    color: #ffffff;
+
+    padding: 12px;
+
+    text-align: left;
+}
+
+td {
+    padding: 10px 12px;
+
+    border-bottom: 1px solid #d7dbe1;
+
+    color: #2c3e50;
+}
+
+tr:hover td {
+    background: #f4f6f8;
+}
+
+/* =========================================================
+   FORM ELEMENTS
+   ========================================================= */
+
+input,
+select,
+textarea {
+    font-family: Arial, Helvetica, sans-serif;
+
+    border: 1px solid #c4c8cc;
+
+    border-radius: 4px;
+
+    padding: 9px 10px;
+
+    background: #ffffff;
+
+    color: #2c3e50;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
     outline: none;
-    border-color: var(--ni-blue);
-    box-shadow: 0 0 0 3px rgba(41, 128, 185, 0.1);
+
+    border-color: #6a5acd;
+
+    box-shadow: 0 0 0 2px rgba(106, 90, 205, 0.15);
 }
 
-/* --- ANIMATIONS --- */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(5px); }
-    to { opacity: 1; transform: translateY(0); }
+/* =========================================================
+   RESPONSIVE MENU
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .ni-tabs {
+        flex-direction: column;
+    }
+
+    .ni-tabs button,
+    .ni-tabs a,
+    .ni-tab-link {
+        width: 100%;
+        text-align: left;
+    }
+
+    .ni-submenu {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .ni-submenu button,
+    .ni-submenu a {
+        width: 100%;
+        text-align: left;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 15px 20px;
+    }
 }
